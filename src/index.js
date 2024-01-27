@@ -10,6 +10,7 @@ let time = 0;
 let timer;
 let lastHole = 0;
 let points = 0;
+moleWhacked = false;
 let difficulty = "easy";
 
 
@@ -289,9 +290,12 @@ function setDuration(duration) {
 *
 */
 function stopGame() { 
+  stopAudio(song);
+  clearTimeout(timeoutID); 
   clearInterval(timer);
-  time = 15;
+  clearScore();
   stopAudio(song); 
+  moleWhacked = false; 
   return "game stopped";
 }
 
