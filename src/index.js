@@ -67,13 +67,14 @@ function play() {
  *
  */
 function setDelay(difficulty) {
-  // TODO: Write your code here.
-    if (difficulty === "easy") {
-      return 1500;
-    } else if (difficulty === "normal") {
-      return 1000;
-    } else if (difficulty === "hard") {
-      return randomInteger(600, 1200);
+  if (difficulty === "easy") {
+    return 1500;
+  } else if (difficulty === "normal") {
+    return 1000;
+  } else if (difficulty === "hard") {
+    return randomInteger(600, 1200);
+  } else {
+    return 0;
   }
 }
 
@@ -93,14 +94,14 @@ function setDelay(difficulty) {
  */
 
 function chooseHole(holes) {
-  // TODO: Write your code here.
-  const index = randomInteger(0, 8);
-	const hole = holes[index];
-	if (hole === lastHole) {
-		return chooseHole(holes);
-  }
+  const index = randomInteger(0,8);
+  const hole = holes[index];
+  if (hole === lastHole){
+    return chooseHole(holes);
+  }else{
     lastHole = hole;
-    return hole;
+  }
+  return hole;
 }
 
 /**
@@ -145,6 +146,7 @@ function gameOver() {
 *
 */
 function showUp() {
+ moleWhacked = false;
   let delay = setDelay("easy"); // TODO: Update so that it uses setDelay()
   const hole = chooseHole(holes);  // TODO: Update so that it use chooseHole()
   return showAndHide(hole, delay);
@@ -165,10 +167,10 @@ function showAndHide(hole, delay){
 
 
  const timeoutID = setTimeout(() => {
-    toggleVisibility(delay);
+    toggleVisibility(hole);
     gameOver();
 moleWhacked = false;
-	}, 0);  // TODO: change the setTimeout delay to the one provided as a parameter
+	}, 1000);  // TODO: change the setTimeout delay to the one provided as a parameter
 
   return timeoutID;
 }
@@ -225,8 +227,8 @@ function updateTimer() {
   // TODO: Write your code here.
   // hint: this code is provided to you in the instructions.
   if (time > 0) {
-		time -= 1;
-		timerDisplay.textContent = time;
+	time -= 1;
+	timerDisplay.textContent = time;
 	}
   return time;
 }
@@ -293,6 +295,7 @@ function setDuration(duration) {
 function stopGame() { 
   stopAudio(song); 
   clearInterval(timer);
+   moleWhacked = false;
   return "game stopped";
 }
 
