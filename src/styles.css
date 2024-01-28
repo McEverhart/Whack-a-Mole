@@ -54,7 +54,6 @@ h2 {
 }
 
 .grid {
-  grid-column: 1 / span 3;
   width: 600px;
   height: 400px;
   display: flex;
