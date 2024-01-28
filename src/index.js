@@ -302,6 +302,8 @@ function setDuration(duration) {
 *
 */
 function stopGame() { 
+console.log("stopGame function called");
+  clearTimeout(timeoutId); 
  clearInterval(timer);
  stopAudio(song);
    moleWhacked = false;
