@@ -260,13 +260,14 @@ function whack(event) {
   // call updateScore()
   updateScore();
   playAudio(audioHit);
+  setTimeout(() => {
  moleWhacked = false; 
-}, 1000);
+  }, 1000);
+}
 return points;
 }
   
 
-  
 
 /**
 *
