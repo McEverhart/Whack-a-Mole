@@ -291,11 +291,8 @@ function setDuration(duration) {
 *
 */
 function stopGame() { 
-  stopAudio(song);
-  clearTimeout(timeoutID); 
+  stopAudio(song); 
   clearInterval(timer);
-  clearScore();
- moleWhacked = false; 
   return "game stopped";
 }
 
@@ -309,7 +306,6 @@ function stopGame() {
 function startGame() {
     setDuration(10);
     showUp();
-    points = 0;
      return "game started";
   }
  
