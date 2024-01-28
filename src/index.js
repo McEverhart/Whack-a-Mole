@@ -269,7 +269,7 @@ function setEventListeners(moles){
   // TODO: Write your code here
   moles.forEach(mole => mole.addEventListener('click', whack)
   );
-  moles.removeEventListener('click', whack); // Remove the event listener after clicking
+  moles.removeEventListener('after.click', whack); // Remove the event listener after clicking
   return moles;
 }
 
@@ -295,8 +295,7 @@ function stopGame() {
   clearTimeout(timeoutID); 
   clearInterval(timer);
   clearScore();
-  stopAudio(song); 
-  moleWhacked = false; 
+ moleWhacked = false; 
   return "game stopped";
 }
 
