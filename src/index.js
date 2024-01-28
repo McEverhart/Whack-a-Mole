@@ -147,7 +147,7 @@ function gameOver() {
 function showUp() {
 console.log("showUp function called");
  moleWhacked = false;
-  let delay = setDelay("easy"); // TODO: Update so that it uses setDelay()
+  let delay = setDelay(difficulty); // TODO: Update so that it uses setDelay()
   const hole = chooseHole(holes);  // TODO: Update so that it use chooseHole()
   return showAndHide(hole, delay);
 }
@@ -171,7 +171,9 @@ function showAndHide(hole, delay){
     gameOver();
 moleWhacked = false;
 	}, 1000);  // TODO: change the setTimeout delay to the one provided as a parameter
-
+setTimeout(() => {
+    moleWhacked = false; 
+	 }, delay);
   return timeoutID;
 }
 
@@ -266,7 +268,6 @@ function whack(event) {
 }
 return points;
 }
-  
 
 
 /**
@@ -278,7 +279,7 @@ function setEventListeners(moles){
   // TODO: Write your code here
   moles.forEach(mole => mole.addEventListener('click', whack)
   );
-  moles.removeEventListener('after.click', whack); // Remove the event listener after clicking
+  mole.removeEventListener('after.click', whack); // Remove the event listener after clicking
   return moles;
 }
 
