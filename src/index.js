@@ -312,16 +312,17 @@ function stopGame() {
 *
 */
 
-function startGame() {
-    setDuration(10);
-    showUp();
-     return "game started";
-  }
- 
-
+function startGame(){
+  setDuration(15);
+  showUp();
+  points = 0;
+  clearScore();
+  startTimer();
+  setEventListeners();
+  return "game started";
+}
 
 startButton.addEventListener("click", startGame);
-
 
 // Please do not modify the code below.
 // Used for testing purposes.
@@ -342,3 +343,4 @@ window.time = time;
 window.setDuration = setDuration;
 window.toggleVisibility = toggleVisibility;
 window.setEventListeners = setEventListeners;
+
