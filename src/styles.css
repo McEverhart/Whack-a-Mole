@@ -32,6 +32,7 @@ h2 {
 .timer-container {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   margin-top: 20px;
 }
@@ -59,7 +60,6 @@ h2 {
   display: flex;
   flex-wrap: wrap;
   margin: 0 auto;
-  justify-content: center;
   cursor: url('https://github.com/Thinkful-Ed/js-dev-final-capstone-starter/blob/main/assets/mallet.png?raw=true'), pointer;
 } 
 
