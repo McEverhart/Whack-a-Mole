@@ -125,12 +125,11 @@ function chooseHole(holes) {
 *
 */
 function gameOver() {
-  // TODO: Write your code here
   if (time > 0) {
-  const timeoutID = showUp();
-    return timeoutID;
+    const timeoutId = showUp();
+    return timeoutId;
   } else {
-    gameStopped = stopGame()
+    stopGame();
     stopAudio(song);
     return "game stopped";
   }
@@ -263,9 +262,10 @@ function whack(event) {
   playAudio(audioHit);
  moleWhacked = false; 
 }, 1000);
+return points;
 }
-  return points;
-}
+  
+
   
 
 /**
