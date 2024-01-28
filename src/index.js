@@ -146,6 +146,7 @@ function gameOver() {
 *
 */
 function showUp() {
+console.log("showUp function called");
  moleWhacked = false;
   let delay = setDelay("easy"); // TODO: Update so that it uses setDelay()
   const hole = chooseHole(holes);  // TODO: Update so that it use chooseHole()
@@ -198,6 +199,7 @@ function toggleVisibility(hole){
 *
 */
 function updateScore() {
+console.log("updateScore function called");
   // TODO: Write your code here
   points +=1;
   score.textContent = points;
@@ -253,11 +255,15 @@ function startTimer() {
 *
 */
 function whack(event) {
-  const updateScore = event.whacked
+  if (!moleWhacked) {
+    moleWhacked = true; 
   // TODO: Write your code here.
   // call updateScore()
   updateScore();
   playAudio(audioHit);
+ moleWhacked = false; 
+}, 1000);
+}
   return points;
 }
   
