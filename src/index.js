@@ -165,9 +165,10 @@ function showAndHide(hole, delay){
 
 
  const timeoutID = setTimeout(() => {
-    toggleVisibility(hole);
+    toggleVisibility(delay);
     gameOver();
-	}, delay);  // TODO: change the setTimeout delay to the one provided as a parameter
+moleWhacked = false;
+	}, 0);  // TODO: change the setTimeout delay to the one provided as a parameter
 
   return timeoutID;
 }
