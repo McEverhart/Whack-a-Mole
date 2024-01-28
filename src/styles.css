@@ -58,6 +58,8 @@ h2 {
   height: 400px;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
   margin: 0 auto;
   cursor: url('https://github.com/Thinkful-Ed/js-dev-final-capstone-starter/blob/main/assets/mallet.png?raw=true'), pointer;
 } 
@@ -66,8 +68,7 @@ h2 {
   flex: 1 0 33.33%;
   overflow: hidden;
   position: relative;
-  justify-content: center;
-   align-items: center;
+
 }
 
 .hole:after {
