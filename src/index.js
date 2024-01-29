@@ -73,8 +73,6 @@ function setDelay(difficulty) {
     return 1000;
   } else if (difficulty === "hard") {
     return randomInteger(600, 1200);
-  } else {
-    return 0;
   }
 }
 
