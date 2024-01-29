@@ -10,7 +10,6 @@ let time = 0;
 let timer;
 let lastHole = 0;
 let points = 0;
-moleWhacked = false;
 let difficulty = "easy";
 
 
@@ -248,16 +247,10 @@ function startTimer() {
 *
 */
 function whack(event) {
-  if (!moleWhacked) {
-    moleWhacked = true; 
   // TODO: Write your code here.
   // call updateScore()
   updateScore();
   playAudio(audioHit);
-  setTimeout(() => {
- moleWhacked = false; 
-  }, 1000);
-}
 return points;
 }
 
@@ -290,11 +283,9 @@ function setDuration(duration) {
 * timer using clearInterval. Returns "game stopped".
 *
 */
-function stopGame() { 
-  clearTimeout(timeoutId); 
+function stopGame() {  
  clearInterval(timer);
  stopAudio(song);
-   moleWhacked = false;
   return "game stopped";
 }
 
