@@ -171,9 +171,7 @@ function showAndHide(hole, delay){
     gameOver();
 moleWhacked = false;
 	}, 1000);  // TODO: change the setTimeout delay to the one provided as a parameter
-setTimeout(() => {
-    moleWhacked = false; 
-	 }, delay);
+
   return timeoutID;
 }
 
