@@ -198,7 +198,6 @@ function toggleVisibility(hole){
 *
 */
 function updateScore() {
-console.log("updateScore function called");
   // TODO: Write your code here
   points +=1;
   score.textContent = points;
@@ -318,7 +317,6 @@ console.log("stopGame function called");
 function startGame(){
   setDuration(15);
   showUp();
-  points = 0;
   clearScore();
   startTimer();
   setEventListeners();
