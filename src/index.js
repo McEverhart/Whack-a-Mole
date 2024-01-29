@@ -96,10 +96,9 @@ function chooseHole(holes) {
   const hole = holes[index];
   if (hole === lastHole){
     return chooseHole(holes);
-  }else{
-    lastHole = hole;
   }
-  return hole;
+    lastHole = hole;
+    return hole;
 }
 
 /**
@@ -127,7 +126,7 @@ function gameOver() {
     const timeoutId = showUp();
     return timeoutId;
   } else {
-    stopGame();
+    gameStopped = stopGame();
     stopAudio(song);
     return "game stopped";
   }
@@ -143,8 +142,6 @@ function gameOver() {
 *
 */
 function showUp() {
-console.log("showUp function called");
- moleWhacked = false;
   let delay = setDelay(difficulty); // TODO: Update so that it uses setDelay()
   const hole = chooseHole(holes);  // TODO: Update so that it use chooseHole()
   return showAndHide(hole, delay);
@@ -163,13 +160,12 @@ function showAndHide(hole, delay){
   // TODO: call the toggleVisibility function so that it adds the 'show' class.
   toggleVisibility(hole);
 
-
  const timeoutID = setTimeout(() => {
-    toggleVisibility(hole);
-    gameOver();
-moleWhacked = false;
-	}, 1000);  // TODO: change the setTimeout delay to the one provided as a parameter
-
+	// TODO: call the toggleVisibility function so that it removes the 'show' class when the timer times out.
+	
+toggleVisibility(hole);
+gameOver();
+	   }, delay); // TODO: change the setTimeout delay to the one provided as a parameter
   return timeoutID;
 }
 
@@ -240,6 +236,7 @@ function updateTimer() {
 function startTimer() {
   // TODO: Write your code here
    timer = setInterval(updateTimer, 1000);
+	return timer;
 }
 
 /**
@@ -294,7 +291,6 @@ function setDuration(duration) {
 *
 */
 function stopGame() { 
-console.log("stopGame function called");
   clearTimeout(timeoutId); 
  clearInterval(timer);
  stopAudio(song);
@@ -310,7 +306,7 @@ console.log("stopGame function called");
 */
 
 function startGame(){
-  setDuration(15);
+  setDuration(10);
   showUp();
   clearScore();
   startTimer();
