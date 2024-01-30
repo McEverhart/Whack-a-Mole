@@ -6,7 +6,7 @@ const startButton = document.querySelector('#start');
 const score = document.querySelector('#score'); // Use querySelector() to get the score element
 const timerDisplay = document.querySelector('#timer'); // use querySelector() to get the timer element.
 
-let time = 15;
+let time = 0;
 let timer;
 let lastHole = 0;
 let points = 0;
@@ -248,9 +248,9 @@ function startTimer() {
 function whack(event) {
   // TODO: Write your code here.
   // call updateScore()
+ playAudio(audioHit);
   updateScore();
-  playAudio(audioHit);
- return points;
+  return points;
 }
 
 
@@ -261,9 +261,7 @@ function whack(event) {
 */
 function setEventListeners(moles){
   // TODO: Write your code here
-    moles.forEach(
-    mole => mole.addEventListener('click', whack)
-  );
+    moles.forEach(mole => mole.addEventListener('click', whack));
   return moles;
 }
 
@@ -285,9 +283,9 @@ function setDuration(duration) {
 *
 */
 function stopGame() {  
- clearInterval(timer);
  stopAudio(song);
-  return "game stopped";
+ clearInterval(timer);
+ return "game stopped";
 }
 
 /**
