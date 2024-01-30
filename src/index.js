@@ -160,14 +160,12 @@ function gameOver() {
  */
 function showUp() {
 
-  let delay = setDelay(difficulty); // TODO: Update so that it uses setDelay()
+  let delay = setDelay("easy"); // TODO: Update so that it uses setDelay()
 
   const hole = chooseHole(holes); // TODO: Update so that it use chooseHole()
 
   return showAndHide(hole, delay);
-
 }
-
 /**
  *
  * The purpose of this function is to show and hide the mole given
