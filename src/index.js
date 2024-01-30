@@ -161,9 +161,8 @@ function showAndHide(hole, delay){
 
  const timeoutID = setTimeout(() => {
 	// TODO: call the toggleVisibility function so that it removes the 'show' class when the timer times out.
-	
-toggleVisibility(hole);
-gameOver();
+	toggleVisibility(hole);
+	gameOver();
 	   }, delay); // TODO: change the setTimeout delay to the one provided as a parameter
   return timeoutID;
 }
@@ -251,7 +250,7 @@ function whack(event) {
   // call updateScore()
   updateScore();
   playAudio(audioHit);
-return points;
+ return points;
 }
 
 
@@ -302,8 +301,8 @@ function startGame(){
   setDuration(10);
   showUp();
   clearScore();
-  startTimer();
-  setEventListeners();
+setEventListeners();
+startTimer();
   return "game started";
 }
 
