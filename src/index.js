@@ -262,7 +262,9 @@ return points;
 */
 function setEventListeners(moles){
   // TODO: Write your code here
-  moles.forEach((moles) => moles.addEventListener("click", whack));
+    moles.forEach(
+    mole => mole.addEventListener('click', whack)
+  );
   return moles;
 }
 
