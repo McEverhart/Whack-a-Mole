@@ -125,7 +125,7 @@ function gameOver() {
     const timeoutId = showUp();
     return timeoutId;
   } else {
-    gameStopped = stopGame();
+    stopGame();
     stopAudio(song);
     return "game stopped";
   }
