@@ -226,13 +226,9 @@ function toggleVisibility(hole) {
 function updateScore() {
 
   // TODO: Write your code here
-
   points += 1;
-
   score.textContent = points;
-
   return points;
-
 }
 
 /**
@@ -243,15 +239,10 @@ function updateScore() {
  *
  */
 function clearScore() {
-
   // TODO: Write your code here
-
   points = 0;
-
   score.textContent = points;
-
   return points;
-
 }
 
 /**
@@ -260,13 +251,9 @@ function clearScore() {
  *
  */
 function updateTimer() {
-
   if (time > 0) {
-
-         time -= 1;
-
+   time -= 1;
          timerDisplay.textContent = time;
-
   }
 
   return time;
@@ -356,6 +343,7 @@ function stopGame() {
 function startGame(){
    setDuration(10);
    showUp();
+   clearScore()
    setEventListeners();
    startTimer();
  return "game started";
